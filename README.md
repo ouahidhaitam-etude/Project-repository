@@ -20,7 +20,7 @@
 |----------------------|----------------------------------|-------------|
 | Haitam Ouahid        | CRUD Livres, JavaScript          | [@ouahidhaitam-etude](https://github.com/ouahidhaitam-etude) |
 | Mohamed Elaissaoui   | CRUD Utilisateurs, Dashboard     | [@SimoXis](https://github.com/SimoXis) |
-| Doae Chourfi         | CSS, Responsive Design           | [@Doaeee](https://github.com/Doaeee) |
+| Doae Chorfi         | CSS, Responsive Design           | [@Doaeee](https://github.com/Doaeee) |
 
 ---
 
