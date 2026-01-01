@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    transition: .3s ease;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at top, #0c1633, #000722);
+}
+
+.background .circle {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background: #007bff;
+    filter: blur(140px);
+    border-radius: 50%;
+    top: -80px;
+    left: -80px;
+}
+
+.background .circle2 {
+    background: #ff0077;
+    bottom: -100px;
+    right: -100px;
+}
+
+.container {
+    width: 380px;
+    background: rgba(255,255,255,0.08);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.45);
+    animation: fadeIn .7s ease forwards;
+    text-align: center;
+}
+
+h2 {
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.subText {
+    color: #d0d0d0;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.inputBox {
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.inputBox input {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    background: rgba(255,255,255,0.15);
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    color: #fff;
+}
+
+.inputBox label {
+    position: absolute;
+    left: 14px;
+    top: 12px;
+    color: #c7c7c7;
+    pointer-events: none;
+}
+
+.inputBox input:focus ~ label,
+.inputBox input:valid ~ label {
+    top: -10px;
+    font-size: 12px;
+    color: #0af;
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    background: linear-gradient(135deg, #0066ff, #00eaff);
+    font-size: 16px;
+    color: #fff;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #00eaff, #0066ff);
+    transform: translateY(-3px);
+}
+
+.credit {
+    margin-top: 22px;
+    color: #cddcf7;
+    font-size: 12px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
