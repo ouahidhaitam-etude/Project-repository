@@ -1,17 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-  <title>Login</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="style-login.css">
 </head>
+
 <body>
+    <div class="background">
+        <div class="circle"></div>
+        <div class="circle circle2"></div>
+    </div>
 
-<div class="login">
-  <input id="user" placeholder="user">
-  <input id="pass" type="password" placeholder="password">
-  <button onclick="login()">Login</button>
-</div>
+    <div class="container" id="container">
+        <h2>📚 Bienvenue</h2>
+        <p class="subText">Connectez-vous pour continuer</p>
 
-<script src="login.js"></script>
+        <form id="loginForm">
+            <div class="inputBox">
+                <input type="text" id="username" required>
+                <label>Nom d'utilisateur</label>
+            </div>
+
+            <div class="inputBox">
+                <input type="password" id="password" required>
+                <label>Mot de passe</label>
+            </div>
+
+            <button class="btn" type="submit">Se connecter</button>
+
+            <p class="credit">Bibliothèque • Dev-Team</p>
+        </form>
+    </div>
+
+    <script src="login.js"></script>
 </body>
 </html>
