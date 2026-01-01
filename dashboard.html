@@ -1,26 +1,117 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-  <title>Dashboard</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Dashboard Bibliothèque</title>
+  <link rel="stylesheet" href="sidebars.css">
 </head>
 <body>
 
+<!-- ===== SIDEBAR ===== -->
 <div class="sidebar">
-  <h2>Bibliothèque</h2>
-  <a href="livres.html">Livres</a>
-  <a href="auteurs.html">Auteurs</a>
-  <a href="adherents.html">Adhérents</a>
-  <a href="emprunts.html">Emprunts</a>
-  <a href="categories.html">Catégories</a>
+  <div class="sidebar-header">
+    <span class="logo">📚</span>
+    <span class="title">Bibliothèque</span>
+  </div>
+
+  <ul class="menu">
+    <li class="menu-item active" data-page="dashboard">📊 Dashboard</li>
+    <li class="menu-item" data-page="books">📖 Livres</li>
+    <li class="menu-item" data-page="authors">✍️ Auteurs</li>
+    <li class="menu-item" data-page="categories">🗂️ Catégories</li>
+    <li class="menu-item" data-page="favorites">⭐ Favoris</li>
+  </ul>
+
+  <div class="sidebar-footer">
+    <img src="D:\Clips\9343b833-e7af-42ea-8a61-31bc41eefe2b\Fortnite\Screenshot_1.png" alt="Admin">
+    <span>Admin</span>
+  </div>
 </div>
 
-<div class="content">
-  <h1>Gestion de Bibliothèque</h1>
-  <p>Bienvenue dans le système de gestion</p>
-</div>
+<div class="content" id="content"></div>
+
+<script src="sidebars.js"></script>
+<script src="crud.js"></script>
+
+<script>
+
+
+const content = document.getElementById("content");
+
+/* Navigation menu */
+document.querySelectorAll(".menu-item").forEach(item => {
+  item.addEventListener("click", () => {
+    loadPage(item.dataset.page);
+  });
+});
+
+/* Router */
+function loadPage(page) {
+  switch (page) {
+    case "dashboard":
+      renderDashboard();
+      break;
+    case "books":
+      renderLivres();
+      break;
+    case "authors":
+      renderAuteurs();
+      break;
+    case "categories":
+      renderCategories();
+      break;
+    case "favorites":
+      renderFavorites();
+      break;
+  }
+
+const content = document.getElementById("content");
+content.classList.add("slide-in");
+  // Animation slide
+  content.classList.remove("slide-in");
+  void content.offsetWidth;
+  content.classList.add("slide-in");
+}
+
+/* Dashboard */
+function renderDashboard() {
+  const livres = JSON.parse(localStorage.getItem("livres")) || [];
+  const auteurs = JSON.parse(localStorage.getItem("auteurs")) || [];
+  const categories = JSON.parse(localStorage.getItem("categories")) || [];
+  const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+
+  content.innerHTML = `
+    <div class="cards">
+      <div class="card">
+        <h2>${livres.length}</h2>
+        <span>Livres</span>
+      </div>
+      <div class="card">
+        <h2>${auteurs.length}</h2>
+        <span>Auteurs</span>
+      </div>
+      <div class="card">
+        <h2>${categories.length}</h2>
+        <span>Catégories</span>
+      </div>
+      <div class="card">
+        <h2>${favorites.length}</h2>
+        <span>Favorites</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Bienvenue dans le Dashboard</h3>
+      <p>Utilisez le menu pour gérer votre bibliothèque.<br><br>Pour l'ajout :📘.<br><br>Pour la modification :✏️.<br><br>Pour la suppression :❌.<br><br>Pour les favoris :⭐.</p>
+    </div>
+  `;
+}
+
+
+/* Chargement initial */
+loadPage("dashboard");
+</script>
 
 </body>
 </html>
-
-
